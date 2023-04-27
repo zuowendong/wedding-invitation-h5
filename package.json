@@ -4,13 +4,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "bump": "pnpm update @varlet/touch-emulator @varlet/ui"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@varlet/touch-emulator": "^2.9.6",
     "@varlet/ui": "^2.9.6",
-    "vue": "^3.2.41"
+    "vue": "^3.2.41",
+    "vue-waterfall-plugin-next": "^2.2.1"
   },
   "devDependencies": {
     "@types/node": "^16.11.68",
