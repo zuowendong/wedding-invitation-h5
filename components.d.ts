@@ -12,7 +12,6 @@ declare module '@vue/runtime-core' {
     IconMusic: typeof import('./src/components/icons/IconMusic.vue')['default']
     VarAppBar: typeof import('@varlet/ui')['_AppBarComponent']
     VarAvatar: typeof import('@varlet/ui')['_AvatarComponent']
-    VarButton: typeof import("@varlet/ui")["_ButtonComponent"]
     VarCell: typeof import('@varlet/ui')['_CellComponent']
     VarCol: typeof import('@varlet/ui')['_ColComponent']
     VarImage: typeof import('@varlet/ui')['_ImageComponent']
