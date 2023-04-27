@@ -31,5 +31,6 @@ jobs:
       - name: Deploy invitation
         uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-page
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          exclude_assets: ''
           folder: dist
