@@ -10,11 +10,18 @@ const breakpoints = ref({
 });
 
 const list = ref([
-	{ src: "https://cdn.shopify.com/s/files/1/0012/9217/3374/products/XHD4397.jpg?v=1680767714" },
-	{ src: new URL("../assets/test1.jpg", import.meta.url).href },
-	{ src: new URL("../assets/test2.jpg", import.meta.url).href },
-	{ src: "https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" },
-	{ src: "https://cdn.shopify.com/s/files/1/0012/9217/3374/products/XHD4397.jpg?v=1680767714" },
+	{ src: new URL("../assets/moment/1.jpg", import.meta.url).href },
+	{ src: new URL("../assets/moment/2.jpg", import.meta.url).href },
+	{ src: new URL("../assets/moment/3.jpg", import.meta.url).href },
+	{ src: new URL("../assets/moment/4.jpg", import.meta.url).href },
+	{ src: new URL("../assets/moment/5.jpg", import.meta.url).href },
+	{ src: new URL("../assets/moment/6.jpg", import.meta.url).href },
+	{ src: new URL("../assets/moment/7.jpg", import.meta.url).href },
+	{ src: new URL("../assets/moment/8.jpg", import.meta.url).href },
+	{ src: new URL("../assets/moment/9.jpg", import.meta.url).href },
+	{ src: new URL("../assets/moment/10.jpg", import.meta.url).href },
+	{ src: new URL("../assets/moment/11.jpg", import.meta.url).href },
+	{ src: new URL("../assets/moment/12.jpg", import.meta.url).href },
 ]);
 
 const show = ref(false);

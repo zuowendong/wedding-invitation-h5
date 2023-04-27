@@ -48,7 +48,13 @@ const controlMusic = () => {
 						</var-col>
 						<var-col direction="column" :span="16" :xs="24">
 							<div class="wedding-home-title">
-								<div class="text">{{ $t("title") }}</div>
+								<div class="text">
+									<span class="word">婚</span>
+									<span class="word">礼</span>
+									<span class="word">邀</span>
+									<span class="word">请</span>
+									<span class="word">函</span>
+								</div>
 							</div>
 							<div class="wedding-home-purport">{{ $t("purport") }}</div>
 							<div class="wedding-home-inviation">
@@ -90,11 +96,17 @@ const controlMusic = () => {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		letter-spacing: 10px;
 		.text {
 			border-radius: 6px;
 			width: 66%;
 			background-color: rgb(237, 204, 161);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			.word {
+				padding: 4px;
+				font-size: 16px;
+			}
 		}
 	}
 
