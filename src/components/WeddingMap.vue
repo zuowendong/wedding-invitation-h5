@@ -23,7 +23,7 @@ onMounted(() => {
 
 <template>
 	<wedding-block :title="$t('map')">
-		<div style="width: 100%; height: 400px" id="container"></div>
+		<div style="width: 100%; height: 720px" id="container"></div>
 	</wedding-block>
 </template>
 
