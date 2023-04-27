@@ -49,6 +49,7 @@ defineProps({
 
 	&-title {
 		font-size: 18px;
+		font: italic 1em Georgia, serif;
 	}
 
 	&-subtitle {

@@ -1,14 +1,42 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted } from "vue";
+import { ref } from "vue";
+
+const audioRef = ref<null | HTMLAudioElement>(null);
+const imgRef = ref<null | HTMLImageElement>(null);
+let playStatus = ref(false);
+const musicImg = ref({
+	play: "https://storage.beta.custouch.com/res/8080/music.png",
+	pause: "https://storage.beta.custouch.com/res/8082/stopMusic.png",
+});
+const musicUrl = new URL("../assets/test1.mp3", import.meta.url).href;
+const controlMusic = () => {
+	if (audioRef.value && imgRef.value) {
+		if (playStatus.value) {
+			audioRef.value.pause();
+			imgRef.value.src = musicImg.value["pause"];
+		} else {
+			audioRef.value.play();
+			imgRef.value.src = musicImg.value["play"];
+		}
+	}
+	playStatus.value = !playStatus.value;
+};
+</script>
 
 <template>
-	<var-app-bar image="@/assets/home.png">
+	<var-app-bar image="@/assets/home.png" @click="controlMusic">
 		<template #right>
-			<var-button style="margin: 2px 2px 0 0" round text color="transparent" text-color="#fff">
-				<icon-Zh class="wedding-profile-icon" />
-			</var-button>
-			<var-button style="margin: 2px 2px 0 0" round text color="transparent" text-color="#fff">
-				<icon-En class="wedding-profile-icon" />
-			</var-button>
+			<div class="img-box">
+				<img
+					ref="imgRef"
+					:class="{ rotate: playStatus }"
+					src="https://storage.beta.custouch.com/res/8082/stopMusic.png"
+					alt="music"
+					@click="controlMusic"
+				/>
+				<audio ref="audioRef" :src="musicUrl" loop></audio>
+			</div>
 		</template>
 
 		<template #content>
@@ -25,15 +53,15 @@
 						</var-col>
 						<var-col direction="column" :span="16" :xs="24">
 							<div class="wedding-home-title">
-								<div class="text">婚礼邀请函</div>
+								<div class="text">{{ $t("title") }}</div>
 							</div>
-							<div class="wedding-home-purport">吾家有喜</div>
+							<div class="wedding-home-purport">{{ $t("purport") }}</div>
 							<div class="wedding-home-inviation">
-								<div class="text">收到这封邀请函的你</div>
-								<div class="text">是我们生命中重要的部分</div>
+								<div class="text">{{ $t("inviation1") }}</div>
+								<div class="text">{{ $t("inviation2") }}</div>
 								<div class="text">/</div>
-								<div class="text">这样特殊的一天</div>
-								<div class="text">希望有你的见证</div>
+								<div class="text">{{ $t("inviation3") }}</div>
+								<div class="text">{{ $t("inviation4") }}</div>
 							</div>
 							<wedding-profile />
 						</var-col>
@@ -129,5 +157,27 @@
 			padding: 0;
 		}
 	}
+}
+
+// 元素持续旋转关键帧
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+.img-box {
+	width: 27px;
+	height: 27px;
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+// 旋转类
+.rotate {
+	animation: rotation 3s linear infinite;
 }
 </style>

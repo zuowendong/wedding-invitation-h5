@@ -1,11 +1,11 @@
-name: Deploy Resume
+name: Deploy Invitation
 
 on:
   push:
     branches: [master]
 
 jobs:
-  deploy-resume:
+  deploy-invitation:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,11 +25,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build resume
+      - name: Build invitation
         run: pnpm build
 
-      - name: Deploy resume
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+      - name: Deploy invitation
+        uses: peaceiris/actions-gh-pages@v3
         with:
           branch: gh-page
           folder: dist

@@ -25,7 +25,7 @@ function preview(url: string) {
 </script>
 
 <template>
-	<wedding-block title="甜蜜瞬间">
+	<wedding-block :title="$t('picture')">
 		<div class="content">
 			<Waterfall :list="list" :breakpoints="breakpoints">
 				<template #item="{ item, url, index }">

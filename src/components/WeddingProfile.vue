@@ -6,25 +6,25 @@
 					<var-cell :border-offset="0" border>
 						<div class="wedding-profile-cell">
 							<div class="name">
-								<span class="man">左文东</span>
+								<span class="man">{{ $t("man") }}</span>
 								<var-image class="icon" width="22px" height="19px" src="../assets/auspicious-clouds-5.png" />
-								<span class="woman">刘夜莲</span>
+								<span class="woman">{{ $t("woman") }}</span>
 							</div>
 						</div>
 					</var-cell>
 					<var-cell :border-offset="0" border>
 						<div class="wedding-profile-cell">
-							<span>2023年07月08日</span>
+							<span>{{ $t("time") }}</span>
 						</div>
 					</var-cell>
 					<var-cell :border-offset="0" border>
 						<div class="wedding-profile-cell">
-							<span>癸卯年五月二十一</span>
+							<span>{{ $t("calendar") }}</span>
 						</div>
 					</var-cell>
 					<var-cell :border-offset="0" border>
 						<div class="wedding-profile-cell">
-							<span style="text-align: center">江苏省淮安市清江浦区翔宇大道156号 神旺大酒店</span>
+							<span style="text-align: center">{{ $t("address") }}</span>
 						</div>
 					</var-cell>
 				</var-paper>
