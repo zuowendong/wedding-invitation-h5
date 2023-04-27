@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
 import { ref } from "vue";
+import WeddingInviation from "./WeddingInviation.vue";
 
 const audioRef = ref<null | HTMLAudioElement>(null);
 const imgRef = ref<null | HTMLImageElement>(null);
@@ -41,15 +41,10 @@ const controlMusic = () => {
 
 		<template #content>
 			<div class="wedding-home-content">
-				<var-image class="wedding-home-img1" width="77px" height="46px" src="../assets/auspicious-clouds-1.png" />
-				<var-image class="wedding-home-img2" width="96px" height="56px" src="../assets/auspicious-clouds-2.png" />
-				<var-image class="wedding-home-img3" width="77px" height="46px" src="../assets/auspicious-clouds-3.png" />
-				<var-image class="wedding-home-img4" width="77px" height="46px" src="../assets/auspicious-clouds-4.png" />
-
 				<div class="wedding-home-content-inner">
 					<var-row :gutter="20">
 						<var-col :span="8" :xs="24" justify="center">
-							<var-avatar :size="180" bordered src="@/assets/wedding.jpg" />
+							<var-avatar :size="180" bordered src="@/assets/avatar.jpg" />
 						</var-col>
 						<var-col direction="column" :span="16" :xs="24">
 							<div class="wedding-home-title">
@@ -57,11 +52,7 @@ const controlMusic = () => {
 							</div>
 							<div class="wedding-home-purport">{{ $t("purport") }}</div>
 							<div class="wedding-home-inviation">
-								<div class="text">{{ $t("inviation1") }}</div>
-								<div class="text">{{ $t("inviation2") }}</div>
-								<div class="text">/</div>
-								<div class="text">{{ $t("inviation3") }}</div>
-								<div class="text">{{ $t("inviation4") }}</div>
+								<wedding-inviation />
 							</div>
 							<wedding-profile />
 						</var-col>
@@ -78,33 +69,6 @@ const controlMusic = () => {
 	margin-right: 6px;
 }
 .wedding-home {
-	position: relative;
-
-	&-img1 {
-		position: absolute;
-		top: 118px;
-		left: 18px;
-		z-index: 6;
-	}
-	&-img2 {
-		position: absolute;
-		top: 390px;
-		right: 2px;
-		z-index: 6;
-	}
-	&-img3 {
-		position: absolute;
-		top: 70px;
-		right: -22px;
-		z-index: 6;
-	}
-	&-img4 {
-		position: absolute;
-		bottom: 183px;
-		left: 3px;
-		z-index: 6;
-	}
-
 	&-content {
 		display: flex;
 		justify-content: center;
@@ -151,7 +115,8 @@ const controlMusic = () => {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
+		height: 110px;
 		.text {
 			line-height: 22px;
 			padding: 0;

@@ -7,7 +7,7 @@
 						<div class="wedding-profile-cell">
 							<div class="name">
 								<span class="man">{{ $t("man") }}</span>
-								<var-image class="icon" width="22px" height="19px" src="../assets/auspicious-clouds-5.png" />
+								<var-image class="icon" width="22px" height="19px" src="../assets/auspicious-clouds.png" />
 								<span class="woman">{{ $t("woman") }}</span>
 							</div>
 						</div>

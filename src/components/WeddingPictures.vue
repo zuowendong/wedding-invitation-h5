@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { LazyImg, Waterfall } from "vue-waterfall-plugin-next";
 import "vue-waterfall-plugin-next/dist/style.css";
-import { ImagePreview } from "@varlet/ui";
 
 const breakpoints = ref({
 	1200: { rowPerView: 4 },
@@ -10,17 +9,22 @@ const breakpoints = ref({
 	500: { rowPerView: 2 },
 });
 
-const list = [
+const list = ref([
 	{ src: "https://cdn.shopify.com/s/files/1/0012/9217/3374/products/XHD4397.jpg?v=1680767714" },
 	{ src: new URL("../assets/test1.jpg", import.meta.url).href },
 	{ src: new URL("../assets/test2.jpg", import.meta.url).href },
 	{ src: "https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF" },
 	{ src: "https://cdn.shopify.com/s/files/1/0012/9217/3374/products/XHD4397.jpg?v=1680767714" },
-];
+]);
 
+const show = ref(false);
+const images = computed(() => {
+	return list.value.map((img) => img.src);
+});
+let currentUrl = ref("");
 function preview(url: string) {
-	console.log(url);
-	ImagePreview(url);
+	show.value = true;
+	currentUrl.value = url;
 }
 </script>
 
@@ -35,6 +39,7 @@ function preview(url: string) {
 				</template>
 			</Waterfall>
 		</div>
+		<var-image-preview closeable :current="currentUrl" :images="images" v-model:show="show" />
 	</wedding-block>
 </template>
 
